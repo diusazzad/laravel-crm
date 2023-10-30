@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+<div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
+    {{-- <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
         <!-- Card Item Start -->
         <div
             class="rounded-sm border border-stroke bg-white py-6 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -19,9 +19,9 @@
                 </svg>
             </div>
 
-            <div class="mt-4 flex items-end justify-between">
+            <div class="flex items-end justify-between mt-4">
                 <div>
-                    <h4 class="text-title-md font-bold text-black dark:text-white">
+                    <h4 class="font-bold text-black text-title-md dark:text-white">
                         $3.456K
                     </h4>
                     <span class="text-sm font-medium">Total views</span>
@@ -59,9 +59,9 @@
                 </svg>
             </div>
 
-            <div class="mt-4 flex items-end justify-between">
+            <div class="flex items-end justify-between mt-4">
                 <div>
-                    <h4 class="text-title-md font-bold text-black dark:text-white">
+                    <h4 class="font-bold text-black text-title-md dark:text-white">
                         $45,2K
                     </h4>
                     <span class="text-sm font-medium">Total Profit</span>
@@ -96,9 +96,9 @@
                 </svg>
             </div>
 
-            <div class="mt-4 flex items-end justify-between">
+            <div class="flex items-end justify-between mt-4">
                 <div>
-                    <h4 class="text-title-md font-bold text-black dark:text-white">
+                    <h4 class="font-bold text-black text-title-md dark:text-white">
                         2.450
                     </h4>
                     <span class="text-sm font-medium">Total Product</span>
@@ -136,9 +136,9 @@
                 </svg>
             </div>
 
-            <div class="mt-4 flex items-end justify-between">
+            <div class="flex items-end justify-between mt-4">
                 <div>
-                    <h4 class="text-title-md font-bold text-black dark:text-white">
+                    <h4 class="font-bold text-black text-title-md dark:text-white">
                         3.456
                     </h4>
                     <span class="text-sm font-medium">Total Users</span>
@@ -183,7 +183,7 @@
 
         <!-- ====== Chat Card Start -->
         <div
-            class="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
+            class="col-span-12 py-6 bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
             <h4 class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white">
                 Chats
             </h4>
@@ -191,13 +191,13 @@
             <div>
                 <a href="messages.html"
                     class="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4">
-                    <div class="relative h-14 w-14 rounded-full">
-                        <img src="./images/user/user-03.png" alt="User" />
+                    <div class="relative rounded-full h-14 w-14">
+                        <img src="{{ asset('template/src/images/user/user-03.png') }}" alt="User" />
                         <span
                             class="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"></span>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-between">
+                    <div class="flex items-center justify-between flex-1">
                         <div>
                             <h5 class="font-medium text-black dark:text-white">
                                 Devid Heilo
@@ -208,20 +208,20 @@
                                 <span class="text-xs"> . 12 min</span>
                             </p>
                         </div>
-                        <div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+                        <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
                             <span class="text-sm font-medium text-white">3</span>
                         </div>
                     </div>
                 </a>
                 <a href="messages.html"
                     class="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4">
-                    <div class="relative h-14 w-14 rounded-full">
-                        <img src="./images/user/user-04.png" alt="User" />
+                    <div class="relative rounded-full h-14 w-14">
+                        <img src="{{ asset('template/src/images/user/user-04.png') }}" alt="User" />
                         <span
                             class="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"></span>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-between">
+                    <div class="flex items-center justify-between flex-1">
                         <div>
                             <h5 class="font-medium">Henry Fisher</h5>
                             <p>
@@ -233,13 +233,13 @@
                 </a>
                 <a href="messages.html"
                     class="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4">
-                    <div class="relative h-14 w-14 rounded-full">
-                        <img src="./images/user/user-05.png" alt="User" />
+                    <div class="relative rounded-full h-14 w-14">
+                        <img src="{{ asset('template/src/images/user/user-05.png') }}" alt="User" />
                         <span
                             class="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-6"></span>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-between">
+                    <div class="flex items-center justify-between flex-1">
                         <div>
                             <h5 class="font-medium">Wilium Smith</h5>
                             <p>
@@ -251,13 +251,13 @@
                 </a>
                 <a href="messages.html"
                     class="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4">
-                    <div class="relative h-14 w-14 rounded-full">
-                        <img src="./images/user/user-01.png" alt="User" />
+                    <div class="relative rounded-full h-14 w-14">
+                        <img src="{{ asset('template/src/images/user/user-01.png') }}" alt="User" />
                         <span
                             class="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"></span>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-between">
+                    <div class="flex items-center justify-between flex-1">
                         <div>
                             <h5 class="font-medium text-black dark:text-white">
                                 Henry Deco
@@ -268,20 +268,20 @@
                                 <span class="text-xs"> . Sun</span>
                             </p>
                         </div>
-                        <div class="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+                        <div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
                             <span class="text-sm font-medium text-white">2</span>
                         </div>
                     </div>
                 </a>
                 <a href="messages.html"
                     class="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4">
-                    <div class="relative h-14 w-14 rounded-full">
+                    <div class="relative rounded-full h-14 w-14">
                         <img src="./images/user/user-02.png" alt="User" />
                         <span
                             class="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-7"></span>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-between">
+                    <div class="flex items-center justify-between flex-1">
                         <div>
                             <h5 class="font-medium">Jubin Jack</h5>
                             <p>
@@ -293,13 +293,13 @@
                 </a>
                 <a href="messages.html"
                     class="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4">
-                    <div class="relative h-14 w-14 rounded-full">
+                    <div class="relative rounded-full h-14 w-14">
                         <img src="./images/user/user-05.png" alt="User" />
                         <span
                             class="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-6"></span>
                     </div>
 
-                    <div class="flex flex-1 items-center justify-between">
+                    <div class="flex items-center justify-between flex-1">
                         <div>
                             <h5 class="font-medium">Wilium Smith</h5>
                             <p>
@@ -312,6 +312,7 @@
             </div>
         </div>
         <!-- ====== Chat Card End -->
-    </div>
+    </div> --}}
+    asdfasd
 </div>
 @endsection

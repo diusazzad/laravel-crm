@@ -7,6 +7,7 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        "./public/tailadmin-free-tailwind-dashboard-template/src/images/icon/**/*.svg",
     ],
 
     theme: {
@@ -57,9 +58,9 @@ export default {
             ...defaultTheme.screens,
         },
         extend: {
-            // fontFamily: {
-            //     sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            // },
+            //     // fontFamily: {
+            //     //     sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            //     // },
             fontSize: {
                 'title-xxl': ['44px', '55px'],
                 'title-xl': ['36px', '45px'],
@@ -202,15 +203,15 @@ export default {
                 47.5: '11.875rem',
                 75: '18.75rem',
             },
-            zIndex: {
-                999999: '999999',
-                99999: '99999',
-                9999: '9999',
-                999: '999',
-                99: '99',
-                9: '9',
-                1: '1',
-            },
+            // zIndex: {
+            //     999999: '999999',
+            //     99999: '99999',
+            //     9999: '9999',
+            //     999: '999',
+            //     99: '99',
+            //     9: '9',
+            //     1: '1',
+            // },
             opacity: {
                 65: '.65',
             },
