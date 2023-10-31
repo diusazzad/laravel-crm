@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Factories\AccountFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 class AccountSeeder extends Seeder
@@ -11,6 +12,6 @@ class AccountSeeder extends Seeder
      */
     public function run(): void
     {
-        factory(App\Models\AccountFactory::class, 20)->create();
+        AccountFactory::new()->create(20);
     }
 }

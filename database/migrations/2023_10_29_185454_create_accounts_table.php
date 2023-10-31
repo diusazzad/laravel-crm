@@ -13,14 +13,12 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
-
-
             $table->string('name');
-                        $table->string('rating');
-                        $table->integer('employee_count');
-                        $table->integer('annual_revenue');
-                        $table->string('type');
-                        $table->timestamps();
+            $table->string('rating');
+            $table->integer('employee_count');
+            $table->integer('annual_revenue');
+            $table->string('type');
+            $table->timestamps();
         });
     }
 

@@ -4,61 +4,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
     @vite('resources/css/app.css')
-    <link rel="stylesheet" href="{{ asset('template/src/css/satoshi.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/src/css/style.css') }}">
-
-    <script src="{{ asset('template/src/js/components/chart-01.js') }}"></script>
-    <script src="{{ asset('template/src/js/components/chart-02.js') }}"></script>
-    <script src="{{ asset('template/src/js/components/chart-03.js') }}"></script>
-    <script src="{{ asset('template/src/js/components/chart-04.js') }}"></script>
-    <script src="{{ asset('template/src/js/components/map-01.js') }}"></script>
-
-
-    <script src="{{ asset('template/src/js/index.js') }}"></script>
-    <script src="{{ asset('template/src/js/us-aea-en.js') }}"></script>
-
-
-    <script src="{{ asset('build/assets/app-550d0007.css') }}"></script>
-    <script src="{{ asset('build/assets/app-63bb58ea.js') }}"></script>
-
-    <script src="//unpkg.com/alpinejs" defer></script>
- 
+    <link rel="stylesheet" href="{{ asset('dist/img/fav.png') }}">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
+    <title>Welcome To Cleopatra</title>
 
 </head>
 
-<body>
-    {{-- x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
-    x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
-    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }"
-    > --}}
-    <!-- ===== Preloader Start ===== -->
-    {{-- @include('partials.preloader') --}}
-    <!-- ===== Preloader End ===== -->
+<body class="bg-gray-100">
+    <!-- start navbar -->
+    <x-admin.navbar.nav />
 
-    <!-- ===== Page Wrapper Start ===== -->
-    <div class="flex h-screen overflow-hidden">
-        <!-- ===== Sidebar Start ===== -->
-        @include('partials.sidebar')
-        <!-- ===== Sidebar End ===== -->
+    <!-- end navbar -->
 
-        <!-- ===== Content Area Start ===== -->
-        <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
-            <!-- ===== Header Start ===== -->
-            {{-- @include('partials.header') --}}
-            <!-- ===== Header End ===== -->
+    <!-- strat wrapper -->
+    <div class="flex flex-row flex-wrap h-screen">
+        <!-- start sidebar -->
+        <x-admin.sidebar.side />
 
-            <!-- ===== Main Content Start ===== -->
-            <main>
-                @yield('content')
+        <!-- end sidbar -->
 
-            </main>
-            <!-- ===== Main Content End ===== -->
-        </div>
-        <!-- ===== Content Area End ===== -->
+        <!-- strat content -->
+        @yield('content')
     </div>
-    <!-- ===== Page Wrapper End ===== -->
+    <!-- end wrapper -->
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/scripts.js"></script>
+    <!-- end script -->
 </body>
+<script src="{{ asset('dist/js/scripts.js') }}"></script>
 
 </html>

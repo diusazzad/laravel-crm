@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('admin')->group(function () {
     // All of the routes in this group will be protected by the auth middleware and will have the prefix /admin.
     Route::get('/',[AdminOpportunitiesController::class,'index']);
-    Route::get('/group-owners',[AdminGroupOwnerController::class,'index']);
+    Route::get('/group-owners',[AdminGroupOwnerController::class,'groupbyindex']);
     Route::get('/group-stages',[AdminGroupStage::class,'index']);
     Route::get('/stack-owners',[AdminStackedByOwner::class,'index']);
     Route::get('/stack-stages',[AdminStackedByStage::class,'index']);
