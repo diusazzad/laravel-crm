@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
@@ -15,11 +16,21 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //check if the user is logged in and has the admin role.
-        if (!auth()->user()->hasRole('admin')) {
-            //abort the request with a 403 Forbidden response
-            abort(403);
-        }
+        // Get the user's role.
+        // $userRole = Auth::user()->role;
+
+        // If the user's role does not match the required role, redirect them to the appropriate route.
+        // if ($userRole !== $role) {
+        //     if ($userRole === 0) {
+        //         return redirect()->route('user.dashboard');
+        //     } elseif ($userRole === 1) {
+        //         return redirect()->route('admin.primary');
+        //     } else {
+        //         return redirect()->route('login');
+        //     }
+        // }
+
+        // The user's role matches the required role, so let them proceed to the next middleware.
         return $next($request);
     }
 }

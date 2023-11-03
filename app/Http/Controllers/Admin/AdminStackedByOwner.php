@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminStackedByOwner extends Controller
 {
-    //
+    public function stackownerindex(){
+        return view('admin.stackowners.dashboard');
+    }
 }

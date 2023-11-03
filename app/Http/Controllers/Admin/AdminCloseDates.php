@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminCloseDates extends Controller
 {
-    //
+    public function adminclosedatedashboard(){
+        return view('admin.closedate.dashboard');
+    }
 }

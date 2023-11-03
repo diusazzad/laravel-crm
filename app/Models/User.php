@@ -19,13 +19,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
-    public function hasRole($role){
-        return in_array($role,$this->roles);
-    }
+    // public function hasRole($role){
+    //     return in_array($role,$this->roles);
+    // }
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**

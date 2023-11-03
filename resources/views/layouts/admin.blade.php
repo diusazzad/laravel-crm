@@ -28,6 +28,7 @@
 
         <!-- strat content -->
         @yield('content')
+
     </div>
     <!-- end wrapper -->
 

@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminGroupStage extends Controller
 {
-    //
+    public function groupstages(){
+        return view('admin.groupstage.dashboard');
+    }
 }

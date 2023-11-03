@@ -409,97 +409,54 @@
                 <table class="w-full text-left table-auto">
                     <thead>
                         <tr>
-                            <th class="px-4 py-2 border-r"></th>
-                            <th class="px-4 py-2 border-r">product</th>
-                            <th class="px-4 py-2 border-r">price</th>
-                            <th class="px-4 py-2">date</th>
+                            <th class="px-4 py-2 border-r">Name</th>
+                            <th class="px-4 py-2 border-r">Account</th>
+                            <th class="px-4 py-2 border-r">Revenue</th>
+                            <th class="px-4 py-2 border-r">Stage</th>
+                            <th class="px-4 py-2 border-r">Owner</th>
+                            <th class="px-4 py-2 border-r">Probability</th>
+                            <th class="px-4 py-2 border-r">Trend</th>
+                            <th class="px-4 py-2 border-r">Files</th>
+                            <th class="px-4 py-2 border-r">Type</th>
+                            <th class="px-4 py-2 border-r">Lead Source</th>
+                            <th class="px-4 py-2 border-r">Close Date</th>
+                            <th class="px-4 py-2 border-r">Forecasted Revenue</th>
+                            <th class="px-4 py-2">Updated By</th>
+                            <th class="px-4 py-2">Created By</th>
                         </tr>
                     </thead>
                     <tbody class="text-gray-600">
                         <tr>
                             <td class="px-4 py-2 text-center text-green-500 border border-l-0">
-                                <i class="fad fa-circle"></i>
+                                <i class="fad fa-circle">
+
+                                </i>
                             </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                Lightning to USB-C Adapter Lightning.
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                $<span class="num-2"></span>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0 border-r-0">
-                                <span class="num-2"></span> minutes ago
-                            </td>
+                           
+                            @foreach ($leads as $lead)
+                                <tr>
+                                    <td>{{ $lead->name }}</td>
+                                    <td>{{ $lead->account }}</td>
+                                    <td>{{ $lead->revenue }}</td>
+                                    <td>{{ $lead->stage }}</td>
+                                    <td>{{ $lead->owner }}</td>
+                                    <td>{{ $lead->probability }}</td>
+                                    <td>{{ $lead->trend }}</td>
+                                    <td>{{ $lead->files }}</td>
+                                    <td>{{ $lead->type }}</td>
+                                    <td>{{ $lead->lead_source }}</td>
+                                    <td>{{ $lead->close_date }}</td>
+                                    <td>{{ $lead->forecasted_revenue }}</td>
+                                    <td>{{ $lead->updated_by }}</td>
+                                    <td>{{ $lead->created_by }}</td>
+                                </tr>
+                            @endforeach
                         </tr>
-                        <tr>
-                            <td class="px-4 py-2 text-center text-yellow-500 border border-l-0">
-                                <i class="fad fa-circle"></i>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                Apple iPhone 8.
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                $<span class="num-2"></span>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0 border-r-0">
-                                <span class="num-2"></span> minutes ago
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2 text-center text-green-500 border border-l-0">
-                                <i class="fad fa-circle"></i>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                Apple MacBook Pro.
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                $<span class="num-2"></span>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0 border-r-0">
-                                <span class="num-2"></span> minutes ago
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2 text-center text-red-500 border border-l-0">
-                                <i class="fad fa-circle"></i>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                Samsung Galaxy S9.
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                $<span class="num-2"></span>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0 border-r-0">
-                                <span class="num-2"></span> minutes ago
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2 text-center text-yellow-500 border border-l-0">
-                                <i class="fad fa-circle"></i>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                Samsung Galaxy S8 256GB.
-                            </td>
-                            <td class="px-4 py-2 border border-l-0">
-                                $<span class="num-2"></span>
-                            </td>
-                            <td class="px-4 py-2 border border-l-0 border-r-0">
-                                <span class="num-2"></span> minutes ago
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2 text-center text-green-500 border border-b-0 border-l-0">
-                                <i class="fad fa-circle"></i>
-                            </td>
-                            <td class="px-4 py-2 border border-b-0 border-l-0">
-                                apple watch.
-                            </td>
-                            <td class="px-4 py-2 border border-b-0 border-l-0">
-                                $<span class="num-2"></span>
-                            </td>
-                            <td class="px-4 py-2 border border-b-0 border-l-0 border-r-0">
-                                <span class="num-2"></span> minutes ago
-                            </td>
-                        </tr>
+
+                        {{-- @foreach ($leads as $lead)
+
+                        @endforeach --}}
+
                     </tbody>
                 </table>
             </div>
