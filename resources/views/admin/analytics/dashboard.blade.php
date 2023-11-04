@@ -4,7 +4,7 @@
     <div class="flex-1 p-6 bg-gray-100 md:mt-16">
 
         <!-- congrats & summary -->
-        <div class="grid grid-cols-3 gap-5 lg:grid-cols-1">
+        {{-- <div class="grid grid-cols-3 gap-5 lg:grid-cols-1">
             <!-- congrats -->
             <div class="col-span-1 card">
 
@@ -117,14 +117,14 @@
 
 
 
-        </div>
+        </div> --}}
         <!-- end congrats & summary -->
 
         <!-- status -->
         <div class="grid grid-cols-5 gap-5 mt-5 lg:grid-cols-2">
 
             <!-- status -->
-            <div class="col-span-1 card">
+            {{-- <div class="col-span-1 card">
                 <div class="card-body">
                     <h5 class="text-xs font-extrabold tracking-wider uppercase">today</h5>
                     <h1 class="mt-1 mb-1 text-lg capitalize">$<span class="num-3"></span> <span
@@ -133,11 +133,11 @@
                     <p class="text-xs text-gray-500 capitalize">( $<span class="num-2"></span> in the last year )
                     </p>
                 </div>
-            </div>
+            </div> --}}
             <!-- status -->
 
             <!-- status -->
-            <div class="col-span-1 card">
+            {{-- <div class="col-span-1 card">
                 <div class="card-body">
                     <h5 class="text-xs font-extrabold tracking-wider uppercase">yesterday</h5>
                     <h1 class="mt-1 mb-1 text-lg capitalize">$<span class="num-3"></span> <span
@@ -146,11 +146,11 @@
                     <p class="text-xs text-gray-500 capitalize">( $<span class="num-2"></span> in the last year )
                     </p>
                 </div>
-            </div>
+            </div> --}}
             <!-- status -->
 
             <!-- status -->
-            <div class="col-span-1 card">
+            {{-- <div class="col-span-1 card">
                 <div class="card-body">
                     <h5 class="text-xs font-extrabold tracking-wider uppercase">last week</h5>
                     <h1 class="mt-1 mb-1 text-lg capitalize">$<span class="num-3"></span> <span
@@ -159,11 +159,11 @@
                     <p class="text-xs text-gray-500 capitalize">( $<span class="num-2"></span> in the last year )
                     </p>
                 </div>
-            </div>
+            </div> --}}
             <!-- status -->
 
             <!-- status -->
-            <div class="col-span-1 card">
+            {{-- <div class="col-span-1 card">
                 <div class="card-body">
                     <h5 class="text-xs font-extrabold tracking-wider uppercase">last month</h5>
                     <h1 class="mt-1 mb-1 text-lg capitalize">$<span class="num-3"></span> <span
@@ -172,11 +172,11 @@
                     <p class="text-xs text-gray-500 capitalize">( $<span class="num-2"></span> in the last year )
                     </p>
                 </div>
-            </div>
+            </div> --}}
             <!-- status -->
 
             <!-- status -->
-            <div class="col-span-1 card lg:col-span-2">
+            {{-- <div class="col-span-1 card lg:col-span-2">
                 <div class="card-body">
                     <h5 class="text-xs font-extrabold tracking-wider uppercase">last 90-days</h5>
                     <h1 class="mt-1 mb-1 text-lg capitalize">$<span class="num-3"></span> <span
@@ -185,7 +185,7 @@
                     <p class="text-xs text-gray-500 capitalize">( $<span class="num-2"></span> in the last year )
                     </p>
                 </div>
-            </div>
+            </div> --}}
             <!-- status -->
 
 
@@ -196,7 +196,7 @@
         <div class="grid grid-cols-2 gap-5 mt-5 lg:grid-cols-1">
             <div class="card">
 
-                <div class="card-body">
+                {{-- <div class="card-body">
                     <div class="flex flex-row items-center justify-between">
                         <h1 class="text-lg font-extrabold">best sellers</h1>
                         <a href="#" class="text-sm btn-gray">view all</a>
@@ -275,9 +275,114 @@
 
                     </table>
 
+                </div> --}}
+
+                {{-- @foreach ($leads as $lead)
+                    <div class="card">
+                        <h3 class="card-header">Lead {{ $lead->name }}</h3>
+                        <div class="card-body">
+                            <p>Account: {{ $lead->account }}</p>
+                            <p>Revenue: {{ $lead->revenue }}</p>
+                            <p>Stage: {{ $lead->stage }}</p>
+                            <p>Owner: {{ $lead->owner }}</p>
+                            <p>Probability: {{ $lead->probability }}</p>
+                            <p>Trend: {{ $lead->trend }}</p>
+                            <p>Files: {{ $lead->files }}</p>
+                            <p>Type: {{ $lead->type }}</p>
+                            <p>Lead source: {{ $lead->lead_source }}</p>
+                            <p>User full infos:</p>
+                            <ul>
+                                @foreach ($lead->userFullInfos as $userFullInfo)
+                                    <li>{{ $userFullInfo->call_notes }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endforeach --}}
+
+
+
+                @if ($lead)
+                    <div class="card">
+                        <h3 class="card-header">Lead {{ $lead->name }}</h3>
+                        <div class="card-body">
+                            <p>Account: {{ $lead->account }}</p>
+                            <p>Revenue: {{ $lead->revenue }}</p>
+                            <p>Stage: {{ $lead->stage }}</p>
+                            <p>Owner: {{ $lead->owner }}</p>
+                            <p>Probability: {{ $lead->probability }}</p>
+                            <p>Trend: {{ $lead->trend }}</p>
+                            <p>Files: {{ $lead->files }}</p>
+                            <p>Type: {{ $lead->type }}</p>
+                            <p>Lead source: {{ $lead->lead_source }}</p>
+                            <p>User full infos:</p>
+                            <ul>
+                                @foreach ($lead->userFullInfos as $userFullInfo)
+                                    <li>{{ $userFullInfo->call_notes }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @else
+                    <p>No leads found.</p>
+                @endif
+
+
+                {{-- @foreach ($leads as $lead)
+                <div class="card">
+                    <h3 class="card-header">Lead {{ $lead->name }}</h3>
+                    <div class="card-body">
+                        <p>Account: {{ $lead->account }}</p>
+                        <p>Revenue: {{ $lead->revenue }}</p>
+                        <p>Stage: {{ $lead->stage }}</p>
+                        <p>Owner: {{ $lead->owner }}</p>
+                        <p>Probability: {{ $lead->probability }}</p>
+                        <p>Trend: {{ $lead->trend }}</p>
+                        <p>Files: {{ $lead->files }}</p>
+                        <p>Type: {{ $lead->type }}</p>
+                        <p>Lead source: {{ $lead->lead_source }}</p>
+
+                        @foreach ($userFullInfos as $userFullInfo)
+                            <p>User full info: {{ $userFullInfo->call_notes }}</p>
+                        @endforeach
+
+                    </div>
                 </div>
+            @endforeach --}}
+{{--
+                @foreach ($leads as $lead)
+                    <div class="card">
+                        <h3 class="card-header">Lead {{ $lead->name }}</h3>
+                        <div class="card-body">
+                            <p>Account: {{ $lead->account }}</p>
+                            <p>Revenue: {{ $lead->revenue }}</p>
+                            <p>Stage: {{ $lead->stage }}</p>
+                            <p>Owner: {{ $lead->owner }}</p>
+                            <p>Probability: {{ $lead->probability }}</p>
+                            <p>Trend: {{ $lead->trend }}</p>
+                            <p>Files: {{ $lead->files }}</p>
+                            <p>Type: {{ $lead->type }}</p>
+                            <p>Lead source: {{ $lead->lead_source }}</p>
+
+                            @if ($lead->userFullInfos)
+                                <p>User full info:</p>
+                                <ul>
+                                    @foreach ($lead->userFullInfos as $userFullInfo)
+                                        <li>{{ $userFullInfo->call_notes }}</li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <p>No user full infos found for this lead.</p>
+                            @endif
+
+                        </div>
+                    </div>
+                @endforeach --}}
+
+
+
             </div>
-            <div class="card">
+            {{-- <div class="card">
 
                 <div class="card-body">
                     <h2 class="mb-10 text-lg font-bold">Recent Orders</h2>
@@ -482,7 +587,7 @@
                     <!-- end a table -->
                 </div>
 
-            </div>
+            </div> --}}
 
         </div>
         <!-- end best seller & traffic -->

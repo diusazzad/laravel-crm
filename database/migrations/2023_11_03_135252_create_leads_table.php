@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('leads', function (Blueprint $table) {
+
             $table->id();
             $table->string('name');
             $table->string('account');
@@ -29,6 +30,8 @@ return new class extends Migration
             $table->timestamp('updated_at')->useCurrent();
             $table->string('created_by')->nullable();
             $table->timestamp('created_at')->useCurrent();
+
+
         });
     }
 

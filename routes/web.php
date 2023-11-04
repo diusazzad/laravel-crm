@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminStackedByOwner;
 use App\Http\Controllers\Admin\AdminStackedByStage;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -42,13 +43,19 @@ Route::get('/', function () {
         Route::get('/', [AdminOpportunitiesController::class, 'leadsindex'])->name('admin.primary');
 
         Route::get('/group-owners',[AdminGroupOwnerController::class,'groupbyindex'])->name('admin.group.dashboard');
+        Route::get('/group-owners',[AdminGroupOwnerController::class,'show'])->name('admin.group.dashboard');
+
+
         Route::get('/group-stages',[AdminGroupStage::class,'groupstages'])->name('admin.group.stage.dashboard');
         Route::get('/stack-owners',[AdminStackedByOwner::class,'stackownerindex'])->name('admin.stack.owner.dashboard');
         Route::get('/stack-stages',[AdminStackedByStage::class,'stackstagesdashboard'])->name('admin.stack.stage.dashboard');
         Route::get('/close-wons',[AdminAllCloseWon::class,'closewondashboard'])->name('admin.close.won.dashboard');
         Route::get('/close-dates',[AdminCloseDates::class,'adminclosedatedashboard']);
 
+        // Route::get('/group-owners',[TestController::class,'show']);
     });
+
+
 
     Route::prefix('user')->middleware('admin')->group(function () {
         Route::get('/dashboard',[UserDashboardController::class,'userdashboard'])->name('user.dashboard');
